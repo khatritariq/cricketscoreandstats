@@ -16,7 +16,12 @@
 
 ## Installation
 
-- Create a file named ```.env ``` and copy ```.env.example``` to it. Modify database connection details as per your environment. Modify server settings in that file too. 
+#### Environmental setup
+- For environment setup, please refer to following link (docker compose setup with LAMP)
+https://github.com/khatritariq/simplephpdocker
+
+#### Project setup
+- Create a file named ```.env ``` and copy ```.env.example``` to it. Modify database connection details as per  environment. Modify server settings in that file too. 
 - Create a virtual host with any port available, pointing to public directory of the project.
 - Go to project directory and run database migration with ```php artisan migrate```
 - Run ```php artisan db:seed``` for all data migrations
