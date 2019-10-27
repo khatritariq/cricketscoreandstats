@@ -15,18 +15,6 @@ class Tournament extends AModel
     public $table = 'tournaments';
 
     /**
-     * @var array
-     */
-    /*protected $fillable
-        = [
-            'id',
-            'name',
-            'created_at',
-            'updated_at',
-            'deleted_at'
-        ];*/
-
-    /**
      * Tournament Rounds
      */
     public function rounds()

@@ -14,6 +14,12 @@ class Participant extends Model
     /**
      * @var
      */
-    public $table = 'participants';
+    public $table = 'match_participants';
+
+    public function teamplayer(){
+        return $this->belongsTo('App\Domain\TeamPlayer',
+            'team_player_id',
+            'id');
+    }
 
 }

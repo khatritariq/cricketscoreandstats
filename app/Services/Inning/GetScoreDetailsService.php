@@ -2,6 +2,10 @@
 
 namespace App\Services\Inning;
 
+use App\Domain\Inning;
+use App\Domain\Participant;
+use App\Domain\Player;
+use App\Domain\TeamPlayer;
 use App\Services\AService;
 
 /**
@@ -22,16 +26,26 @@ class GetScoreDetailsService extends AService
      *
      * @throws \Exception
      *
-     * @return array
+     * @return array|null
      */
-    public function __invoke($tournament_id, $round_id, $match_id, $inning_id) : array
+    public function __invoke($tournament_id, $round_id, $match_id, $inning_id) : ?array
     {
+        try {
+            /* Get Inning Batting and Bowling Stats */
 
+            //\DB::enableQueryLog();
+            $inning = Inning::where('id', $inning_id)
+                ->with(
+                    'playerbattingstat.participant.teamplayer.player',
+                    'playerbowlingstat.participant.teamplayer.player',
+                    'match.team1',
+                    'match.team2'
+                )->first();
 
-        print_r($tournament_id);
-        print_r($round_id);
-        print_r($match_id);
-        print_r($inning_id);
-        die();
+            return $inning->ToArray();
+        } catch (\Exception $e)
+        {
+            throw new \Exception('There was some problem fetching innings score details');
+        }
     }
 }

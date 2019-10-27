@@ -4,7 +4,7 @@ namespace App\Domain;
 
 use Illuminate\Database\Eloquent\Model;
 
-class PlayerBattingStat extends Model
+class PlayerBowlingStat extends Model
 {
     /**
      * @var bool
@@ -14,7 +14,7 @@ class PlayerBattingStat extends Model
     /**
      * @var
      */
-    public $table = 'player_batting_stats';
+    public $table = 'player_bowling_stats';
 
     public function inning(){
         return $this->belongsTo('App\Domain\Inning');
@@ -23,4 +23,6 @@ class PlayerBattingStat extends Model
     public function participant(){
         return $this->belongsTo('App\Domain\Participant');
     }
+
+
 }
