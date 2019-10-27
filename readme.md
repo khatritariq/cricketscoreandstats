@@ -26,7 +26,7 @@
 
 - Hit url http://127.0.0.1/tournament/1/round/1/match/1/inning/1 to view inning details
 
-###Technical details
+### Technical details
 
 - Code is written on top of Basic boiler plate laravel project
 - ADR Pattern https://en.wikipedia.org/wiki/Action%E2%80%93domain%E2%80%93responder is being implemented at route-controller level which eases code readability.
@@ -46,5 +46,7 @@
 
 ### Result Screenshot
 
-![alt text](https://ibb.co/swxxjQ3)
+Please see following screenshot - Result of Innigs Stats for the match ( https://ibb.co/swxxjQ3 )
+
+
 
