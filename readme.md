@@ -43,3 +43,8 @@
 - Sample data is being input in ``database/seeds/DatabaseSeeder.php``
 - Controllers are being namespaced in respective entity (using ADR pattern)
 - Flow of web call (route -> Controller -> Service -> Model -> Service -> Controller -> View )
+
+### Result Screenshot
+
+![alt text](https://ibb.co/swxxjQ3)
+
